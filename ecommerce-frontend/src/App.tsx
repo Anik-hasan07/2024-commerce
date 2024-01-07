@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Loader from "./components/loader";
 import Search from "./pages/search";
 import Cart from "./pages/cart";
+import Header from "./components/header";
 
 const Home = lazy(() => import("./pages/home"));
 
@@ -28,6 +29,7 @@ const TransactionManagement = lazy(
 function App() {
   return (
     <Router>
+      <Header/>
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
